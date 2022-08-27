@@ -1,0 +1,40 @@
+{
+  "mentor": [
+    {
+      "id": 1,
+      "name": "Pratik Tandel",
+      "age": "24",
+      "gender": "Male",
+      "email": "pratik.tandel@1rivet.com"
+    },
+    {
+      "id": 2,
+      "name": "Pratik",
+      "age": "24",
+      "gender": "Male",
+      "email": "pratik.tandel@1rivet.com"
+    },
+    {
+      "id": 3,
+      "name": "Pratik del",
+      "age": "24",
+      "gender": "Male",
+      "email": "pratik.tandel@1rivet.com"
+    },
+    {
+      "id": 4,
+      "name": "Pratel",
+      "age": "24",
+      "gender": "Male",
+      "email": "pratik.tandel@1rivet.com"
+    }
+  ],
+  "intern": [
+    {
+      "id": 1,
+      "name": "Vyom Sharma",
+      "age": "22",
+      "gender": "Male"
+    }
+  ]
+}
