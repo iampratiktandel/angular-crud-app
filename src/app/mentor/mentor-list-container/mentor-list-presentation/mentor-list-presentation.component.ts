@@ -30,7 +30,6 @@ export class MentorListPresentationComponent implements OnInit {
   }
 
   onDelete(id?: number) {
-    console.log(id);
     this.deleteMentor.emit(id);
   }
 

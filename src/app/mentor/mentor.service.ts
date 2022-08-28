@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Mentor } from './mentor.model';
+import { Mentor, MentorForm } from './mentor.model';
 
 @Injectable()
 export class MentorService {
@@ -14,8 +14,20 @@ export class MentorService {
     return this.http.get<Mentor[]>(`${this.url}/mentor`);
   }
 
-  deleteMentor(id: number): Observable<any> {
-    console.log('delete mentor');
-    return this.http.delete(`${this.url}/mentor/${id}`)
+  getMentorById(id: number): Observable<Mentor[]> {
+    return this.http.get<Mentor[]>(`${this.url}/mentor/${id}`);
   }
+
+  deleteMentor(id: number): Observable<any> {
+    return this.http.delete<any>(`${this.url}/mentor/${id}`)
+  }
+
+  addMentor(data: MentorForm): Observable<any> {
+    return this.http.post<any>(`${this.url}/mentor`, data);
+  }
+
+  editMentor(data: MentorForm, id: number): Observable<any> {
+    return this.http.put<any>(`${this.url}/mentor/${id}`, data);
+  }
+
 }

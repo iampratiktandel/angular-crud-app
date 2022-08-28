@@ -8,13 +8,15 @@ import { MentorFormContainerComponent } from './mentor-form-container/mentor-for
 import { MentorListPresentationComponent } from './mentor-list-container/mentor-list-presentation/mentor-list-presentation.component';
 import { MentorFormPresentationComponent } from './mentor-form-container/mentor-form-presentation/mentor-form-presentation.component';
 import { MentorService } from './mentor.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [MentorComponent, MentorListContainerComponent, MentorFormContainerComponent, MentorListPresentationComponent, MentorFormPresentationComponent],
   imports: [
     CommonModule,
-    MentorRoutingModule
+    MentorRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     MentorService
