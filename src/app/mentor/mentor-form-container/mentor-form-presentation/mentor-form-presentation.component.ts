@@ -43,14 +43,15 @@ export class MentorFormPresentationComponent implements OnInit {
 
   createForm() {
     return this.fb.group({
-      name: [null, [Validators.required]],
-      age: [null, [Validators.required]],
-      gender: [null, [Validators.required]],
-      email: [null, [Validators.required]],
+      name: [null, [Validators.required, Validators.pattern(/^[a-zA-Z\s]+$/)]],
+      age: [null, [Validators.required, Validators.pattern(/^[0-9]+$/)]],
+      gender: [null, [Validators.required, Validators.pattern(/^[a-zA-Z]+$/)]],
+      email: [null, [Validators.required, Validators.email]],
     })
   }
 
   onSubmit() {
+    this.isSubmitted = true;
     if (this.mentorForm.invalid) {
       return;
     }
@@ -59,5 +60,13 @@ export class MentorFormPresentationComponent implements OnInit {
     } else {
       this.addMentor.emit(this.mentorForm.value);
     }
+  }
+
+  onReset() {
+    this.mentorForm.reset();
+  }
+
+  get mentorFormControls() {
+    return this?.mentorForm?.controls;
   }
 }

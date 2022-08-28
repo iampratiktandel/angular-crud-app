@@ -4,19 +4,44 @@
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name">
+      <div class="text-danger" *ngIf="mentorFormControls?.name?.errors?.required && isSubmitted">
+        Name is required
+      </div>
+      <div class="text-danger" *ngIf="mentorFormControls?.name?.errors?.pattern && isSubmitted">
+        Name should only contain alphabets
+      </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Gender</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="gender">
+      <div class="text-danger" *ngIf="mentorFormControls?.gender?.errors?.required && isSubmitted">
+        Gender is required
+      </div>
+      <div class="text-danger" *ngIf="mentorFormControls?.gender?.errors?.pattern && isSubmitted">
+        Gender should only contain alphabets
+      </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Age</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="age">
+      <div class="text-danger" *ngIf="mentorFormControls?.age?.errors?.required && isSubmitted">
+        Age is required
+      </div>
+      <div class="text-danger" *ngIf="mentorFormControls?.age?.errors?.pattern && isSubmitted">
+        Age shoud only contain numbers
+      </div>
     </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Email</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+      <div class="text-danger" *ngIf="mentorFormControls?.email?.errors?.required && isSubmitted">
+        Email is required
+      </div>
+      <div class="text-danger" *ngIf="mentorFormControls?.email?.errors?.pattern && isSubmitted">
+        Enter a valid email address
+      </div>
     </div>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()">{{ isEditMode ? 'Edit': 'Add' }}</button>
+    <button type="button" class="btn btn-primary me-3" (click)="onSubmit()">{{ isEditMode ? 'Edit': 'Add' }}</button>
+    <button type="button" class="btn btn-secondary" (click)="onReset()">Reset</button>
     </form>
 </div>
