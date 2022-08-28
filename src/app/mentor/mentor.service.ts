@@ -14,8 +14,8 @@ export class MentorService {
     return this.http.get<Mentor[]>(`${this.url}/mentor`);
   }
 
-  getMentorById(id: number): Observable<Mentor[]> {
-    return this.http.get<Mentor[]>(`${this.url}/mentor/${id}`);
+  getMentorById(id: string): Observable<Mentor> {
+    return this.http.get<Mentor>(`${this.url}/mentor/${id}`);
   }
 
   deleteMentor(id: number): Observable<any> {
@@ -26,7 +26,7 @@ export class MentorService {
     return this.http.post<any>(`${this.url}/mentor`, data);
   }
 
-  editMentor(data: MentorForm, id: number): Observable<any> {
+  editMentor(data: MentorForm, id: string): Observable<any> {
     return this.http.put<any>(`${this.url}/mentor/${id}`, data);
   }
 

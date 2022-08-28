@@ -14,6 +14,10 @@ const routes: Routes = [
     component: MentorFormContainerComponent
   },
   {
+    path: 'edit/:id',
+    component: MentorFormContainerComponent
+  },
+  {
     path: '',
     redirectTo: 'list',
     pathMatch: 'full'

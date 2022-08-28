@@ -1,5 +1,5 @@
 <div class="container pt-5">
-  <h2>Mentor Form</h2>
+  <h2>{{ isEditMode ? 'Edit Mentor': 'Add Mentor' }}</h2>
   <form [formGroup]="mentorForm">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Name</label>
@@ -17,6 +17,6 @@
       <label for="exampleInputEmail1" class="form-label">Email</label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
     </div>
-    <button type="button" class="btn btn-primary" (click)="onSubmit()">Add</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit()">{{ isEditMode ? 'Edit': 'Add' }}</button>
     </form>
 </div>
